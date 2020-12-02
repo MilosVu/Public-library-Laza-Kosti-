@@ -1,6 +1,6 @@
 <?php
 
-class Intern
+class Borrowings
 {
     private $bookId;
     private $userId;

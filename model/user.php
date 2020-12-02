@@ -1,6 +1,6 @@
 <?php
 
-class Intern
+class User
 {
     private $userId;
     private $firstName;
@@ -25,7 +25,7 @@ class Intern
         return $this->firstName;
     }
 
-    public function setFirstame($firstName)
+    public function setFirstName($firstName)
     {
         $this->firstName = $firstName;
     }

@@ -18,6 +18,7 @@
 <body>
 
     <!-- Navigation -->
+
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 
     <div class="container-fluid">
@@ -31,16 +32,16 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="components/componentUser.php">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="components/componentBook.php">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bookadded.php">Add new book</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Browse books</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Genres</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Log In</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link colour=red" href="#">Sing Up</a>
@@ -107,13 +108,7 @@
                     have always followed the life of the environment in which they originate and serve. They, in themselves, reflected the culture of the population or special smaller communities, 
                     their efforts to follow the cultural and literary life, but also the development of various activities 
                     (education, social and natural sciences, etc.).
-                </p>
-                <p>
-                    They were formed as private collections of books, newspapers and magazines, professionally de termined or not, as reading rooms, 
-                    then as public institutions and finally as separate ones. When it comes to Čukarica, 
-                    there is no doubt that to some extent there was a private library in the house of Matija Ban during the second half of the 19th century because a 
-                    large part of his life was in many ways related to books - as an editor and journalist, as a teacher, as a writer. and as a public worker. 
-                </p>
+                </p>              
             </div>
         </div>
     </div>

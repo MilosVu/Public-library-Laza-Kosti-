@@ -1,6 +1,6 @@
 <?php
 
-class Intern
+class Book
 {
     private $bookId;
     private $title;
@@ -13,7 +13,7 @@ class Intern
 
     public function getBookId()
     {
-        return $this->userId;
+        return $this->bookId;
     }
 
     public function setBookId($bookId)
