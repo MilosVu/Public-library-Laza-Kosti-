@@ -13,16 +13,17 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <title>Public library, "Laza Kostić"</title>
 </head>
 <body>
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
 
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/logo.png" width="100px"></a>
+        <a class="navbar-brand" href="#"><img src="img/logoNov.png" width="100px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,19 +33,16 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="components/componentUser.php">Users</a>
+                    <a class="nav-link" href="user/userPage.php">Users</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="components/componentBook.php">Books</a>
+                    <a class="nav-link" href="book/booksPage.php">Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="bookadded.php">Add new book</a>
+                    <a class="nav-link" href="borrowings/borrowingsPage.php">Borrowings</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link colour=red" href="#">Sing Up</a>
                 </li>
             </ul>
         </div>
@@ -113,26 +111,7 @@
         </div>
     </div>
 
-    <!-- Two Column Section-->
-
-    <hr class="my-4">
-    <div class="container-fluid padding">
-        <div class="row paddin">
-            <div class="col-lg-6">
-                <h2>Sign In</h2>
-                <p>Sign in to create lists, bibliographies and<br>reviews of library materials</p>
-                <br>
-                <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-
-            <div class="col-lg-6">
-            <h2>Sing Up</h2>
-                <p>If you don't already have a Netflix account, don't worry.<br>You can sign up for a 30-day free trial.</p>
-                <br>
-                <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-        </div>
-    </div>
+   
 
     <!-- Fixed background-->
 
@@ -150,7 +129,7 @@
         <div class="container-fluid padding">
             <div class="row text-center">
                 <div class="col-md-6">
-                    <img src="img/logo.png" width="90px">
+                    <img src="img/logoNov.png" width="90px">
                     <hr class="light">
                     <p>tel. 555-123</p>
                     <p>laza.kostic@gmail.com</p> 

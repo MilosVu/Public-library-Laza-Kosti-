@@ -145,7 +145,7 @@
     </footer>
 
     <script>
-      
+  
     // AJAX Add              
     $(function() {
       $('#add_user_button').click(function(event) {
@@ -195,13 +195,14 @@
         let userId = $(this).parent().parent().data('id');
         $.ajax({
           url: '../handler/userHandler.php',
+          contentType: "application/json",
+          dataType: "json",
           data: {
             "edit": userId
           },
           type: 'POST',
-          dataType: "json",
           success: function(data) {
-            alert('User deleted');
+            alert('Uspesno!!!! izmenjen');
             console.log(data);
             console.log(data["name"]);
             $('#first_name_textfiled').val(data["name"]);

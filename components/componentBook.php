@@ -198,20 +198,22 @@
     });
 
     // AJAX On edit Click
+    /*
     $(function() {
       $('.edit-book').click(function() {
+        
         let userId = $(this).parent().parent().data('id');
         $.ajax({
-          url: '../handler/userHandler.php',
+          url: '../handler/bookHandler.php',
           data: {
             "edit": userId
           },
           type: 'POST',
           dataType: "json",
           success: function(data) {
-            alert('User deleted');
-            console.log(data);
-            console.log(data["name"]);
+            alert('Uspesnoo');
+            /*console.log(data);
+            console.log(data["Title"]);
             $('#title_textfiled').val(data["name"]);
             $('#add_book_button').hide();
             $('#update_book_button').show();
@@ -219,7 +221,76 @@
           }
         });
       });
-    });
+    });*/
+
+    $(function() {
+      $('.edit-book').click(function() {
+        var id = $(this).attr('id');
+          $.ajax({
+          url:"../handler/bookEditFetch.php",
+          method:"POST",
+          data:{id:id},
+          dataType:'json',
+          success:function(data)
+          {
+            localStorage.setItem('BookId', data[0].BookId);
+            localStorage.setItem('Title', data[0].Title);
+            localStorage.setItem('Author', data[0].Author);
+            localStorage.setItem('Year', data[0].Year);
+
+            var options = {
+            ajaxPrefix:''
+            };
+            new Dialogify('bookEditDataForm.php', options)
+            .title('Edit book')
+            .buttons([
+              {
+              text:'Cancle',
+              click:function(e){
+                this.close();
+              }
+              },
+              {
+              text:'Edit',
+              type:Dialogify.BUTTON_PRIMARY,
+              click:function(e)
+              {
+                
+                var form_data = new FormData();
+                form_data.append('name', $('#name').val());
+                form_data.append('address', $('#address').val());
+                form_data.append('gender', $('#gender').val());
+                form_data.append('designation', $('#designation').val());
+                form_data.append('age', $('#age').val());
+                form_data.append('hidden_images', $('#hidden_images').val());
+                form_data.append('id', data[0].id);
+                $.ajax({
+                method:"POST",
+                url:'update_data.php',
+                data:form_data,
+                dataType:'json',
+                contentType:false,
+                cache:false,
+                processData:false,
+                success:function(data)
+                {
+                  if(data.error != '')
+                  {
+                  $('#form_response').html('<div class="alert alert-danger">'+data.error+'</div>');
+                  }
+                  else
+                  {
+                  $('#form_response').html('<div class="alert alert-success">'+data.success+'</div>');
+                  dataTable.ajax.reload();
+                  }
+                }
+              });
+              }
+              }
+            ]).showModal();
+            }
+          })
+        });
 
 
     </script>

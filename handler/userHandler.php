@@ -62,22 +62,42 @@ if (isset($_POST['delete'])) {
 // On Edit click return data about that filed
 if (isset($_POST['edit'])) {
     $id = $_POST['edit'];
-    $sql = "SELECT * FROM users WHERE UserId=$id";
-    $result = $db->query($sql) or die($db->error());
-    $row = $result->fetch_array();
+
+
+    /*
+    $sql = "DELETE FROM users WHERE Userid=$id";
+    if(mysqli_query($dbc,$sql)){
+        echo "User deleted.";
+    }else{
+        echo "Failed!";
+    }*/
+
+    $query = "SELECT * FROM users where UserId=$id";
+
+    $response = @mysqli_query($GLOBALS['dbc'],$query);
+    
+    if($response){
+
+    $row = mysqli_fetch_array($response);
     $data = array(
-          'UserId' => $row['UserId'],
-          'FirstName' => $row['FirstName'],
-          'LastName' => $row['LastName'],
+        'id' => $row['id'],
+        'name' => $row['name'],
         );
-    echo json_encode($data);
+    }else{
+        //echo "Failed!";
+    }
+    
+
+    mysqli_close($dbc);
+    echo json_encode($row);
+
 }
 
 // Update
 if (isset($_POST['update'])) {
     $id = $_POST['update'];
     $name = trim($_POST['name']);
-    $sql = "UPDATE opportunity SET name = '$name' WHERE id = '$id'";
+    $sql = "UPDATE users SET name = '$name' WHERE id = '$id'";
     $db->query($sql) or die($db->error());
 }
 

@@ -3,10 +3,6 @@
 require_once('../databaseBroker.php');
 require_once('../model/book.php');
 
-$dbc = @mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME)
-    OR die('Could not connect to MySQL' . 
-    mysql_conncet_error());
-
 function getAllBooks()
 {
     $bookList = array();
@@ -66,3 +62,30 @@ if (isset($_POST['delete'])) {
     mysqli_close($dbc);
 }
 
+
+// On Edit click return data about that filed
+if (isset($_POST['edit'])) {
+    $id = $_POST['edit'];
+
+    $query = "SELECT * FROM book WHERE BookId=$id";
+
+    $result = @mysqli_query($GLOBALS['dbc'],$query);
+
+    
+    $row = $result->fetch_array();
+    $data = array(
+          'BookId' => $row['BookId'],
+          'Title' => $row['name'],
+          'Author' => $row['Author'],
+          'Year' => $row['Year'],
+        );
+    echo json_encode($data);
+}
+
+// Update
+if (isset($_POST['update'])) {
+    $id = $_POST['update'];
+    $name = trim($_POST['name']);
+    $sql = "UPDATE opportunity SET name = '$name' WHERE id = '$id'";
+    $db->query($sql) or die($db->error());
+}
