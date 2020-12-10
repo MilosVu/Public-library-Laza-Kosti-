@@ -191,7 +191,9 @@ figure {
     padding: 1rem;
 }
 
-
+.col-12 {
+  text-align: center;
+}
 
 /*
 body {

@@ -117,30 +117,35 @@
 
   <!-- Footer -->
   <footer>
-  <div class="container-fluid padding">
-      <div class="row text-center">
-          <div class="col-md-6">
-              <img src="../img/logoNov.png" width="90px">
-              <hr class="light">
-              <p>tel. 555-123</p>
-              <p>laza.kostic@gmail.com</p> 
-              <p>Turgenjevljeva 5, Čukarica</p>
-              <p>Belgrade, Serbia</p>
-          </div>
-          <div class="col-md-6">                   
-              <hr class="light">
-              <h5>Our hours</h5>
-              <hr class="light">
-              <p>Monday to Friday: 9am - 5pm</p>
-              <p>Saturday: 10am - 4pm</p>
-              <p>Sunday: closed</p>
-          </div>
-      </div>
-      <div clas="col-12">
-          <hr class="light-100" alignement="centre">
-          <h5>&copy; Public library, "Laza Kostić" & Milos Vujic 81/17</h5>
-      </div>
-  </div>
+
+    <div class="container-fluid padding">
+        <div class="row text-center">
+            <div class="col-md-6">
+                <img src="../img/logoNov.png" width="90px">
+                <hr class="light">
+                <p>tel. 555-123</p>
+                <p>laza.kostic@gmail.com</p> 
+                <p>Turgenjevljeva 5, Čukarica</p>
+                <p>Belgrade, Serbia</p>
+            </div>
+            <div class="col-md-6">                   
+                <hr class="light">
+                <h5>Opening hours</h5>
+                <hr class="light">
+                <p>Monday to Friday: 9am - 5pm</p>
+                <p>Saturday: 10am - 4pm</p>
+                <p>Sunday: closed</p>
+            </div>
+        </div>
+        <div class = 'row text-center'>
+            <div class="col-12 ">
+                <hr class="light-100" >
+                <h5>&copy; Public library, "Laza Kostić" & Milos Vujic 81/17</h5>
+            </div>
+            
+            
+        </div>
+    </div>
 
   </footer>
 
@@ -217,7 +222,7 @@ $(document).ready(function(){
      click:function(e)
      {
       var form_data = new FormData();
-      if(!validate($('#title'),$('#author'),$('#author'))){
+      if(!validate($('#title').val(),$('#author').val(),$('#year').val())){
         alert("GRESKAAA!");
       }
       form_data.append('title', $('#title').val());
@@ -335,10 +340,10 @@ $(document).ready(function(){
 
  function validate(title, author, year){
 
-    if(title!= null && author!=null && year!=null){
-        //if(yearCheck(year)){
+    if(title.len != '' && author != '' && year != ''){
+        if(yearCheck(year)){
         return true;
-        //}
+        }
     }
     else{
       return false;
@@ -346,14 +351,15 @@ $(document).ready(function(){
   }
 
   function yearCheck(year){
-    if(isNaN(year)){
-        if(yearLength(year)){
-        return true;
-        }
+    if(isNaN(parseInt(year))){
+        //if(yearLength(year)){
+        return false;
+        //}
     }
-    return false;
+    return true;
     }
 
+  
   function yearLength(year){
     if(year.toString().length == 4){
         return true;

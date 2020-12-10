@@ -138,16 +138,20 @@
                 </div>
                 <div class="col-md-6">                   
                     <hr class="light">
-                    <h5>Our hours</h5>
+                    <h5>Opening hours</h5>
                     <hr class="light">
                     <p>Monday to Friday: 9am - 5pm</p>
                     <p>Saturday: 10am - 4pm</p>
                     <p>Sunday: closed</p>
                 </div>
             </div>
-            <div clas="col-12">
-                <hr class="light-100" alignement="centre">
-                <h5>&copy; Public library, "Laza Kostić" & Milos Vujic 81/17</h5>
+            <div class = 'row text-center'>
+                <div class="col-12 ">
+                    <hr class="light-100" >
+                    <h5>&copy; Public library, "Laza Kostić" & Milos Vujic 81/17</h5>
+                </div>
+                
+                
             </div>
         </div>
 
