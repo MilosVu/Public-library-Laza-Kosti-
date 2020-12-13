@@ -1,8 +1,7 @@
 <?php
 
-//fetch_single_data.php
 
-include('database_connection.php');
+include('../../database_connection.php');
 include('../../model/borrowings.php');
 
 if(isset($_POST["idbook"]))
@@ -18,23 +17,15 @@ if(isset($_POST["idbook"]))
 
  $statement = $connect->prepare($query);
  $statement->execute();
- while($row = $statement->fetch(PDO::FETCH_ASSOC))
- {
-     /*
-    $borrowing = new Borrowings();
-    $borrowing->setBookId($row['Book']);
-    $borrowing->setUserId($row['User']);
-    $borrowing->setBorrowed($row['Borrowed']);
-    $borrowing->setReturningDate($row['ReturningDate']);
-    $borrowing->setReturned($row['Returned']);
-    $data[] = $borrowing;
-    echo "niz";
-    print_r($data);
-    echo "element";
-    print_r($data[0]['bookId']);*/
-    $data[] = $row;
- }
- echo json_encode($data);
+ $row = $statement->fetch(PDO::FETCH_ASSOC);
+ $borrowing = new Borrowings();
+ $borrowing->setBookId($row['Book']);
+ $borrowing->setUserId($row['User']);
+ $borrowing->setBorrowed($row['Borrowed']);
+ $borrowing->setReturningDate($row['ReturningDate']);
+ $borrowing->setReturned($row['Returned']);
+ 
+ echo json_encode($borrowing);
 }
 
 ?>

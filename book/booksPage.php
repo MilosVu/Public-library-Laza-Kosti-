@@ -19,39 +19,7 @@
  </head>
  <body>
 
-  <!-- Navigation -->
-  <!--
-  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="../index.php"><img src="../img/logoNov.png" width="100px"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                  <a class="nav-link" href="../index.php">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="../user/userPage.php">Users</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Books</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="../borrowings/borrowingsPage.php">Borrowings</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link colour=red" href="#">Sing Up</a>
-              </li>
-          </ul>
-      </div>
-  </div>
-  </nav>
--->
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="containerNavbar" colour="red">
     <div class="navbar-header">
@@ -70,7 +38,7 @@
         <li><a href="../borrowings/borrowingsPage.php">Borrowings</a></li>
         <li><a href="#">About</a></li>
       </ul>
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
 </nav>
 
@@ -182,9 +150,9 @@ $(document).ready(function(){
    dataType:'json',
    success:function(data)
    {
-    localStorage.setItem('title', data[0].Title);
-    localStorage.setItem('author', data[0].Author);
-    localStorage.setItem('year', data[0].Year);
+    localStorage.setItem('title', data['title']);
+    localStorage.setItem('author', data['author']);
+    localStorage.setItem('year', data['year']);
     var options = {
      ajaxPrefix:''
     };
@@ -263,9 +231,9 @@ $(document).ready(function(){
    dataType:'json',
    success:function(data)
    {
-    localStorage.setItem('title', data[0].Title);
-    localStorage.setItem('author', data[0].Author);
-    localStorage.setItem('year', data[0].Year);
+    localStorage.setItem('title', data['title']);
+    localStorage.setItem('author', data['author']);
+    localStorage.setItem('year', data['year']);
     $('#form_response').html('<div class="alert alert-danger">'+id+'</div>');
     var options = {
      ajaxPrefix:''

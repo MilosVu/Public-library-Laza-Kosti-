@@ -1,15 +1,23 @@
 <?php
 
-class User
+class User implements JsonSerializable
 {
     private $userId;
     private $firstName;
     private $lastName;
 
+    
     public function __construct()
     {
     }
-
+    
+    public function jsonSerialize() {
+        return array(
+            'firstName' => $this->firstName,
+            'lastName' => $this->lastName,
+       );
+    }
+    
     public function getUserId()
     {
         return $this->userId;

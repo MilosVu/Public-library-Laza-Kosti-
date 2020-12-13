@@ -11,10 +11,6 @@
   <script src="https://www.jqueryscript.net/demo/Dialog-Modal-Dialogify/dist/dialogify.min.js"></script>
   <script type="text/javascript" src="editRecords.js"></script>
 
-  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-   --> 
-
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <link rel="icon" type="image/png" href="img/favicon.png">
@@ -22,39 +18,7 @@
  </head>
  <body>
 
-  <!-- Navigation -->
-  <!--
-  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="../index.php"><img src="../img/logo.png" width="100px"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                  <a class="nav-link" href="../index.php">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Users</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="../book/booksPage.php">Books</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="../borrowings/borrowingsPage.php">Borrowings</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link colour=red" href="#">Sing Up</a>
-              </li>
-          </ul>
-      </div>
-  </div>
-  </nav>
--->
+
 
 <!-- Navigation -->
 
@@ -76,7 +40,7 @@
         <li><a href="../borrowings/borrowingsPage.php">Borrowings</a></li>
         <li><a href="#">About</a></li>
       </ul>
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
 </nav>
 
@@ -183,8 +147,9 @@ $(document).ready(function(){
    dataType:'json',
    success:function(data)
    {
-    localStorage.setItem('firstName', data[0].FirstName);
-    localStorage.setItem('lastName', data[0].LastName);
+
+    localStorage.setItem('firstName', data['firstName']);
+    localStorage.setItem('lastName', data['lastName']);
     var options = {
      ajaxPrefix:''
     };
@@ -258,8 +223,8 @@ $(document).ready(function(){
    dataType:'json',
    success:function(data)
    {
-    localStorage.setItem('firstName', data[0].FirstName);
-    localStorage.setItem('lastName', data[0].LastName);
+    localStorage.setItem('firstName', data['firstName']);
+    localStorage.setItem('lastName', data['lastName']);
     var options = {
      ajaxPrefix:''
     };

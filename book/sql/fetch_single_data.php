@@ -1,8 +1,7 @@
 <?php
 
-//fetch_single_data.php
-
-include('database_connection.php');
+include('../../database_connection.php');
+include('../../model/book.php');
 
 if(isset($_POST["id"]))
 {
@@ -11,11 +10,13 @@ if(isset($_POST["id"]))
 
  $statement = $connect->prepare($query);
  $statement->execute();
- while($row = $statement->fetch(PDO::FETCH_ASSOC))
- {
-  $data[] = $row;
- }
- echo json_encode($data);
+ $row = $statement->fetch(PDO::FETCH_ASSOC);
+ $book = new Book();
+ $book->setTitle($row['Title']);
+ $book->setAuthor($row['Author']);
+ $book->setYear($row['Year']);
+
+ echo json_encode($book);
 }
 
 ?>

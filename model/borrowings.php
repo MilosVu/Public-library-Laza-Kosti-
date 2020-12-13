@@ -1,6 +1,6 @@
 <?php
 
-class Borrowings
+class Borrowings implements JsonSerializable
 {
     private $bookId;
     private $userId;
@@ -11,6 +11,16 @@ class Borrowings
     public function __construct()
     {
     }
+
+    public function jsonSerialize() {
+        return array(
+            'book' => $this->bookId,
+            'user' => $this->userId,
+            'borrowed' => $this->borrowed,
+            'returningDate' => $this->returningDate,
+            'returned' => $this->returned,
+       );
+    } 
 
     public function getBookId()
     {

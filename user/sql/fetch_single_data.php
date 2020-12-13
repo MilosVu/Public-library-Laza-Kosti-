@@ -3,6 +3,7 @@
 //fetch_single_data.php
 
 include('../../database_connection.php');
+include('../../model/user.php');
 
 if(isset($_POST["id"]))
 {
@@ -11,11 +12,12 @@ if(isset($_POST["id"]))
 
  $statement = $connect->prepare($query);
  $statement->execute();
- while($row = $statement->fetch(PDO::FETCH_ASSOC))
- {
-  $data[] = $row;
- }
- echo json_encode($data);
+ $row = $statement->fetch(PDO::FETCH_ASSOC);
+ $user = new User();
+ $user->setFirstName($row['FirstName']);
+ $user->setLastName($row['LastName']);
+
+ echo json_encode($user);
 }
 
 ?>

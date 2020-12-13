@@ -1,8 +1,6 @@
 <?php
 
-//fetch.php
-
-include('database_connection.php');
+include('../../database_connection.php');
 $query = '';
 $output = array();
 $query .= "SELECT borrowings.BookId as BookId, borrowings.UserId as UserId, book.title as Book, users.Firstname as User, Borrowed, ReturningDate, Returned 

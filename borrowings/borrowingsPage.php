@@ -148,11 +148,11 @@ $(document).ready(function(){
    dataType:'json',
    success:function(data)
    {
-    localStorage.setItem('book', data[0].Book);
-    localStorage.setItem('user', data[0].User);
-    localStorage.setItem('borrowed', data[0].Borrowed);
-    localStorage.setItem('returningDate', data[0].ReturningDate);
-    localStorage.setItem('returned', data[0].Returned);
+    localStorage.setItem('book', data['book']);
+    localStorage.setItem('user', data['user']);
+    localStorage.setItem('borrowed', data['borrowed']);
+    localStorage.setItem('returningDate', data['returningDate']);
+    localStorage.setItem('returned', data['returned']);
     var options = {
      ajaxPrefix:''
     };

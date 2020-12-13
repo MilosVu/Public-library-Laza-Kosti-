@@ -1,6 +1,6 @@
 <?php
 
-class Book
+class Book implements JsonSerializable
 {
     private $bookId;
     private $title;
@@ -10,6 +10,15 @@ class Book
     public function __construct()
     {
     }
+
+    public function jsonSerialize() {
+        return array(
+            'title' => $this->title,
+            'author' => $this->author,
+            'year' => $this->year,
+       );
+    }
+    
 
     public function getBookId()
     {
